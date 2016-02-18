@@ -57,7 +57,7 @@ def conexion():
 			if mode == 'd':
 				print >>sys.stderr, 'Receiving segment: "%s".' % data
 			data = list(data)
-			
+			print >>sys.stderr, 'lista "%s".' % data
 			try:
 				x = 0
 				ack_aux = ''

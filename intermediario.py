@@ -66,7 +66,7 @@ def to_server():
                     discard = loss_segment()
                     if not discard:
                         lock.acquire()
-                        time.sleep(0.05)
+                        time.sleep(0.5)
                         iservr_sock.sendall(segment)
                         lock.release()
             elif mode == 'd':
@@ -86,7 +86,7 @@ def to_server():
                 length = len(segments_array)
                 for index in range(0, length):
                     lock.acquire()
-                    time.sleep(0.05)
+                    time.sleep(0.5)
                     print >>sys.stderr, 'Sending segment to server: "%s".' % segments_array[index]
                     iservr_sock.sendall(segments_array[index])
                     lock.release()
